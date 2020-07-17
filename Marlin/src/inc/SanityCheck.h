@@ -425,8 +425,8 @@
   #error "CUTTER_POWER_DISPLAY is now CUTTER_POWER_UNIT. Please update your Configuration_adv.h."
 #elif defined(CHAMBER_HEATER_PIN)
   #error "CHAMBER_HEATER_PIN is now HEATER_CHAMBER_PIN. Please update your configuration and/or pins."
-#elif defined(TMC_Z_CALIBRATION)
-  #error "TMC_Z_CALIBRATION has been deprecated in favor of Z_STEPPER_AUTO_ALIGN. Please update your configuration."
+//#elif defined(TMC_Z_CALIBRATION)
+//  #error "TMC_Z_CALIBRATION has been deprecated in favor of Z_STEPPER_AUTO_ALIGN. Please update your configuration."
 #elif defined(Z_MIN_PROBE_ENDSTOP)
   #error "Z_MIN_PROBE_ENDSTOP is no longer required. Please remove it from Configuration.h."
 #elif defined(DUAL_NOZZLE_DUPLICATION_MODE)
@@ -2482,6 +2482,8 @@ static_assert(hbm[Z_AXIS] >= 0, "HOMING_BUMP_MM.Z must be greater than or equal 
 // Other TMC feature requirements
 #if ENABLED(HYBRID_THRESHOLD) && !STEALTHCHOP_ENABLED
   #error "Enable STEALTHCHOP_(XY|Z|E) to use HYBRID_THRESHOLD."
+#elif ENABLED(TMC_Z_CALIBRATION) && !AXIS_IS_TMC(Z) && !AXIS_IS_TMC(Z2) && !AXIS_IS_TMC(Z3)
+  #error "TMC_Z_CALIBRATION requires at least one TMC driver on Z axis"
 #elif ENABLED(SENSORLESS_HOMING) && !HAS_STALLGUARD
   #error "SENSORLESS_HOMING requires TMC2130, TMC2160, TMC2209, TMC2660, or TMC5160 stepper drivers."
 #elif ENABLED(SENSORLESS_PROBING) && !HAS_STALLGUARD

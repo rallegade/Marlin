@@ -818,6 +818,9 @@ private:
     #endif
     TERN_(HYBRID_THRESHOLD, static void M913());
     TERN_(USE_SENSORLESS, static void M914());
+    #if ENABLED(TMC_Z_CALIBRATION)
+      static void M915();
+    #endif
   #endif
 
   #if HAS_L64XX
