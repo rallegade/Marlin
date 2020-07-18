@@ -584,7 +584,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+#define EXTRUDE_MAXLENGTH 100
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -989,7 +989,7 @@
  * Specify a Probe position as { X, Y, Z }
  */
 //  @@@ https://www.thingiverse.com/thing:3003725 doesn't specify a Z offset, try "-1.00" if this doesn't work
-#define NOZZLE_TO_PROBE_OFFSET { -40, -12, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 23, -5, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1186,7 +1186,7 @@
   // After a runout is detected, continue printing this length of filament
   // before executing the runout script. Useful for a sensor at the end of
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
-  //#define FILAMENT_RUNOUT_DISTANCE_MM 25
+  #define FILAMENT_RUNOUT_DISTANCE_MM 5
 
   #ifdef FILAMENT_RUNOUT_DISTANCE_MM
     // Enable this option to use an encoder disc that toggles the runout pin
@@ -1534,7 +1534,7 @@
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_Z_FEEDRATE    3   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
