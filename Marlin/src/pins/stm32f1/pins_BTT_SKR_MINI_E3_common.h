@@ -41,7 +41,7 @@
 //
 // Servos
 //
-#define SERVO0_PIN                          PA1   // "SERVOS"
+//#define SERVO0_PIN                          PA1   // "SERVOS" commented out to be used for temp probe for PINDA sensor
 
 //
 // Limit Switches
@@ -86,6 +86,7 @@
 //
 #define TEMP_0_PIN                          PA0   // Analog Input "TH0"
 #define TEMP_BED_PIN                        PC3   // Analog Input "TB0"
+#define TEMP_PROBE_PIN                      PA1   // Analog Input "Probe port"
 
 //
 // Heaters / Fans
