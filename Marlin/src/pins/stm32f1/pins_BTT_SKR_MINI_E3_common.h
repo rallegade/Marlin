@@ -41,19 +41,19 @@
 //
 // Servos
 //
-#define SERVO0_PIN                          PC14   // "SERVOS" commented out to be used for temp probe for PINDA sensor
+#define SERVO0_PIN                          PC14   // "SERVOS" Normally this is pin PA1
 
 //
 // Limit Switches
 //
 #define X_STOP_PIN                          PC0   // "X-STOP"
 #define Y_STOP_PIN                          PC1   // "Y-STOP"
-#define Z_STOP_PIN                          PA1   // "Z-STOP" Normally this port is PC2
+#define Z_STOP_PIN                          PA1   // "Z-STOP" Normally this pin is PC2
 
 //
 // Z Probe must be this pin
 //
-#define Z_MIN_PROBE_PIN                     PA1  // "PROBE"
+#define Z_MIN_PROBE_PIN                     PA1  // "PROBE" Normally this is pin PC14
 
 //
 // Filament Runout Sensor
