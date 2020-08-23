@@ -3201,17 +3201,17 @@
   #define USER_SCRIPT_AUDIBLE_FEEDBACK
   //#define USER_SCRIPT_RETURN  // Return to status screen after a script
 
-  #define USER_DESC_5 "Emergency Stop" //Custom addition
-  #define USER_GCODE_5 "M112" //Custom addition
+  #define USER_DESC_1 "Emergency Stop" //Custom addition
+  #define USER_GCODE_1 "M112" //Custom addition
 
   #define USER_DESC_2 "Maintenance position" //Custom addition
   #define USER_GCODE_2 "G90\nG0 X0 Y0 Z50\nM84" //Custom addition
 
-  #define USER_DESC_1 "Home & UBL Info"
-  #define USER_GCODE_1 "G28\nG29 W"
+  #define USER_DESC_3 "Home & UBL Info"
+  #define USER_GCODE_3 "G28\nG29 W"
 
-  #define USER_DESC_5 "Home & Info"
-  #define USER_GCODE_5 "G28\nM503"
+  #define USER_DESC_4 "Home & Info"
+  #define USER_GCODE_4 "G28\nM503"
 #endif
 
 /**
