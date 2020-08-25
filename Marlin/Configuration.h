@@ -813,7 +813,7 @@
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
-  #define DEFAULT_ZJERK  0.4
+  #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 5.0     // Additional jerk allowance for all travel moves
 
@@ -823,7 +823,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    4.5  // May be used by Linear Advance
+#define DEFAULT_EJERK    4  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -833,7 +833,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.017 // (mm) Distance from real junction edge (this has been calculated from 0.4*jerk*jerk/acceleration which is 0.4*10*10/800 for this case)
+  #define JUNCTION_DEVIATION_MM 0.01 // (mm) Distance from real junction edge (this has been calculated from 0.4*jerk*jerk/acceleration which is 0.4*10*10/800 for this case)
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
