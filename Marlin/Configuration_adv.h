@@ -406,8 +406,8 @@
  *
  * Define one or both of these to override the default 0-255 range.
  */
-#define FAN_MIN_PWM 100
-#define FAN_MAX_PWM 255
+#define FAN_MIN_PWM 20
+//#define FAN_MAX_PWM 255
 
 /**
  * FAST PWM FAN Settings
@@ -1025,7 +1025,7 @@
 // @section lcd
 
 #if EITHER(ULTIPANEL, EXTENSIBLE_UI)
-  #define MANUAL_FEEDRATE { 2700, 2700, 1000, 100 } // (mm/m) Feedrates for manual moves along X, Y, Z, E from panel
+  #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 60 } // (mm/m) Feedrates for manual moves along X, Y, Z, E from panel
   #define SHORT_MANUAL_Z_MOVE 0.025 // (mm) Smallest manual Z move (< 0.1mm)
   #if ENABLED(ULTIPANEL)
     #define MANUAL_E_MOVES_RELATIVE // Display extruder move distance rather than "position"
