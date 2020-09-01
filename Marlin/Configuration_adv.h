@@ -2252,7 +2252,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       900        //this is double the ammount as two motors are run in serial
+    #define Z_CURRENT       800        //this is double the ammount as two motors are run in serial
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
