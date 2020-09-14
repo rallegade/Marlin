@@ -561,10 +561,15 @@
   //#define DEFAULT_bedKi 1.41
   //#define DEFAULT_bedKd 1675.16
 
-  //Ender 3 standard bed at 60 degrees 5 times
-  #define DEFAULT_bedKp 93.60
-  #define DEFAULT_bedKi 18.24
-  #define DEFAULT_bedKd 320.15
+  //Ender 3 standard bed at 60 degree 25 times with trianglelab textured PEI sheet on
+  //#define DEFAULT_bedKp 114.75
+  //#define DEFAULT_bedKi 21.05
+  //#define DEFAULT_bedKd 417.00
+
+  //Ender 3 standard bed at 75 degree 25 times with trianglelab textured PEI sheet on
+  #define DEFAULT_bedKp 174.50
+  #define DEFAULT_bedKi 32.99
+  #define DEFAULT_bedKd 615.35
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
