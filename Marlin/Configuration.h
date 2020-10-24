@@ -769,7 +769,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 30, 80 }
+#define DEFAULT_MAX_FEEDRATE          { 200, 250, 5, 80 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -797,9 +797,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1250    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1250    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1250    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -809,10 +809,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 10.0
-  #define DEFAULT_YJERK 10.0
+  #define DEFAULT_XJERK 6.0
+  #define DEFAULT_YJERK 6.0
   #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 5.0     // Additional jerk allowance for all travel moves
@@ -823,7 +823,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    5  // May be used by Linear Advance
+#define DEFAULT_EJERK    4  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -846,7 +846,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1015,10 +1015,10 @@
 //#define PROBING_MARGIN 10   // @@@ Guide says "MIN_PROBE_EDGE
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED 10000
+#define XY_PROBE_SPEED (180*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z * 4
+#define Z_PROBE_SPEED_FAST (HOMING_FEEDRATE_Z * 4)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
@@ -1051,10 +1051,10 @@
  */
 #define Z_CLEARANCE_DEPLOY_PROBE    0 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     2 // Z Clearance between multiple probes
+#define Z_CLEARANCE_MULTI_PROBE     1 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING             5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -4 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
