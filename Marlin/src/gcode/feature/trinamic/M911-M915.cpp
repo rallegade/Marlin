@@ -454,7 +454,7 @@
 
     SERIAL_ECHOPAIR("\nCalibration current: Z", _rms);
 
-    soft_endstops_enabled = false;
+    SET_SOFT_ENDSTOP_LOOSE(true);
 
     do_blocking_move_to_z(Z_MAX_POS+_z);
 
@@ -469,7 +469,7 @@
     #endif
 
     do_blocking_move_to_z(Z_MAX_POS);
-    soft_endstops_enabled = true;
+    SET_SOFT_ENDSTOP_LOOSE(false);
 
     SERIAL_ECHOLNPGM("\nHoming Z because we lost steps");
     queue.inject_P(PSTR("G28 Z"));
